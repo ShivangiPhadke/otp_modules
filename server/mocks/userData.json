@@ -1,0 +1,26 @@
+{
+    "data": {
+        "users": [
+            {
+                "id": 1,
+                "name": "tester1",
+                "email": "tester1@dso.org.sg"
+            },
+            {
+                "id": 2,
+                "name": "tester2",
+                "email": "tester2@dso.org.sg.yahoo.com"
+            },
+            {
+                "id": 3,
+                "name": "admin1",
+                "email": "admin1@dso.org.sg"
+            },
+            {
+                "id": 4,
+                "name": "admin2",
+                "email": "admin2@proc.dso.org.sg"
+            }
+        ]
+    }
+}

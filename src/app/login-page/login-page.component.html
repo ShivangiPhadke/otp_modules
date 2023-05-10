@@ -1,0 +1,38 @@
+<div class="col-12">
+    <div class="col-6 al-form">
+        <form class="form-css" [formGroup]="loginForm">
+
+            <div class="container">
+                <label for="uname"
+                    [ngClass]="{ 'required' : loginForm.controls['emailId'].validator && loginForm.controls['emailId'].validator('').required}"><b>Email
+                        Id</b></label>
+                <input type="text" pattern="regex" formControlName="emailId" placeholder="Enter Username" name="uname"
+                    (change)="emailValue()">
+                <ul class="ul-class">
+                    <li *ngIf="loginForm.controls['emailId'].errors.required && loginForm.controls['emailId'].touched">
+                        <label class="errorMsg">Email Id is Required</label>
+                    </li>
+                </ul>
+
+                <button (click)="getOtp(loginForm.get('emailId').valid)" type="otp" placeholder="Enter Password"
+                    name="otp" required>
+                    <label for="otp">Send OTP</label>
+                </button>
+                <span *ngIf="isShow">
+                    <ng-otp-input [formCtrl]="loginForm.controls['otp']" [config]="{length:6}"></ng-otp-input>
+                </span>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" (click)="onCancel()" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
+        </form>
+    </div>
+
+</div>
